@@ -1,0 +1,22 @@
+{
+  "name": "intro",
+  "version": "1.0.0",
+  "description": "Learn to test javascript applications",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watchAll"
+  },
+  "keywords": [
+    "javascript",
+    "typescript",
+    "test",
+    "jest"
+  ],
+  "author": "Thiago Bignotto",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^27.0.3",
+    "jest": "^27.4.4"
+  }
+}
