@@ -30,9 +30,9 @@ Add the test script property
 **Create the first test**
 
 ```javascript
-it("should sum 2 and 2 and return 4", () => {
-  expect(sum(2, 2)).toBe(4)
-})
+it('should sum 2 and 2 and return 4', () => {
+  expect(sum(2, 2)).toBe(4);
+});
 ```
 
 This test should fail. There is no sum function.
@@ -40,15 +40,45 @@ This test should fail. There is no sum function.
 **Implement the sum function**
 
 ```javascript
-module.exports.sum = (num1, num2) => num1 + num2
+module.exports.sum = (num1, num2) => num1 + num2;
 ```
 
 Import `sum` function and thest should pass.
 
 ```javascript
-const { sum } = require("./calculator")
+const { sum } = require('./calculator');
 
-it("should sum 2 and 2 and return 4", () => {
-  expect(sum(2, 2)).toBe(4)
-})
+it('should sum 2 and 2 and return 4', () => {
+  expect(sum(2, 2)).toBe(4);
+});
+```
+
+## Coverage report
+
+Run jest with flag `--coverage` to generate a code coverage report.
+
+## Babel
+
+Add dependencies:
+
+```bash
+yarn add -D babel-jest @babel/core @babel/preset-env
+```
+
+Create the file `babel.config.js`
+
+```javascript
+// babel.config.js
+module.exports = {
+  presets: [
+    [
+      '@babel/preset-env',
+      {
+        targets: {
+          node: 'current',
+        },
+      },
+    ],
+  ],
+};
 ```
